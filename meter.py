@@ -60,7 +60,8 @@ with tab2:
         )
 
         # 스마트폰 카메라 호출
-        img_file_buffer = st.camera_input(f"📷 {selected_unit} 계량기 촬영")
+        # 스마트폰 기본 카메라 앱 호출 (후면 카메라 기본 작동)
+        img_file_buffer = st.file_uploader(f"📷 {selected_unit} 계량기 촬영 (터치하여 '카메라' 선택)", type=['png', 'jpg', 'jpeg'])
 
         if img_file_buffer is not None:
             image = Image.open(img_file_buffer)
